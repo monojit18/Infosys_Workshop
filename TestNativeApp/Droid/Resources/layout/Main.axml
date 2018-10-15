@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:id="@+id/analyzedTextView"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:gravity="center"
+        android:textColor="#ff000000" />
+    <EditText
+        android:id="@+id/voiceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:gravity="left" />
+    <Button
+        android:id="@+id/recordButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Record"
+        android:gravity="center"
+        android:autoText="false"
+        android:textAllCaps="true" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/analyzeButton"
+        android:text="Analyze"
+        android:autoText="false"
+        android:textAllCaps="true" />
+</LinearLayout>

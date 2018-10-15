@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestFormsApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <ControlTemplate x:Key="GreenTemplate">
+
+                <Grid Margin="0,44,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />                    
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="6*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" HorizontalOptions="FillAndExpand" BorderColor="Black"
+                            BorderWidth="2" TextColor="Blue" Text="Button1" />      
+                                              
+                    <ContentPresenter Grid.Column="1" BackgroundColor="Purple"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand" />
+                    
+                    <Button Grid.Column="2" HorizontalOptions="FillAndExpand" BorderColor="Black"
+                            BorderWidth="2" TextColor="Green" Text="Button2"/>
+                </Grid>
+                  
+            </ControlTemplate>
+            
+        </ResourceDictionary>
+       
+    </Application.Resources>
+</Application>

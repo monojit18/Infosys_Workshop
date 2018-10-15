@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestAzureServices.Views.ImageAnalysisPage"
+             xmlns:customcontrols="clr-namespace:TestAzureServices.Views.CustomControls">
+    
+    <ContentPage.Content>
+        
+        <RelativeLayout VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="Gray"
+                        >
+        
+             <Image x:Name="CapturedImage" Source="placeholder.png"
+                   HorizontalOptions="Fill"
+                   Aspect="AspectFit"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                    Property=X, Factor=0.0, Constant=0.0}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                    Property=Y, Factor=0.0, Constant=0.0}"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                        Factor=1.0, Property=Width}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                        Factor=0.5, Property=Height}"  />
+            
+            <StackLayout HorizontalOptions="Fill" BackgroundColor="White"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                    Property=X, Factor=0.0, Constant=0.0}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                    Property=Height, Factor=1.0, Constant=0.0, ElementName=CapturedImage}"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                        Factor=1.0, Property=Width}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                        Factor=0.5, Property=Height}"> 
+                
+                <Button x:Name="CapturePhoto" Text="Capture Photo"
+                    HorizontalOptions="FillAndExpand"                    
+                    Command="{Binding CaptureImageCommand}" />
+            
+                <Button x:Name="AnalyzePhoto" Text="Analyze Photo"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding CanUpload}"
+                    Command="{Binding AnalyzeImageCommand}" />
+                
+                <Label x:Name="AnalyzedLabel" LineBreakMode="WordWrap"
+                   Text="{Binding AnalyzedResult}"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Fill" VerticalOptions="FillAndExpand" />
+                
+            </StackLayout>            
+        </RelativeLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--<StackLayout BackgroundColor="Gray" HorizontalOptions="Fill" HeightRequest="64">                                 
+        <customcontrols:CircleImageView Source="logout.png"
+                                        WidthRequest="44"
+                                        HeightRequest="44"
+                                        HorizontalOptions="End" />
+            
+        </StackLayout>-->

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cwM-fI-kqQ">
+                                <rect key="frame" x="10" y="56" width="285" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TBh-lk-cwY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Voice" translatesAutoresizingMaskIntoConstraints="NO" id="a7x-gk-7OO">
+                                <rect key="frame" x="310" y="46" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ct3-T1-QOC"/>
+                                    <constraint firstAttribute="height" constant="50" id="wCk-Nj-ZgI"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw8-fr-oLU">
+                                <rect key="frame" x="10" y="126" width="285" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ouc-pU-BP0"/>
+                                </constraints>
+                                <state key="normal" title="Analyze"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-vg-MYe">
+                                <rect key="frame" x="24" y="191" width="271" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="N8D-tG-lhG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cwM-fI-kqQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="3W1-gU-Rnd"/>
+                            <constraint firstAttribute="trailing" secondItem="a7x-gk-7OO" secondAttribute="trailing" constant="15" id="8l6-Iu-bLz"/>
+                            <constraint firstItem="cwM-fI-kqQ" firstAttribute="trailingMargin" secondItem="sTx-vg-MYe" secondAttribute="trailing" constant="-8" id="EJY-E0-9kg"/>
+                            <constraint firstItem="sTx-vg-MYe" firstAttribute="top" secondItem="a7x-gk-7OO" secondAttribute="bottom" constant="95" id="Z8E-Vv-fNB"/>
+                            <constraint firstItem="mw8-fr-oLU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="bSH-Bo-hWJ"/>
+                            <constraint firstItem="a7x-gk-7OO" firstAttribute="leading" secondItem="cwM-fI-kqQ" secondAttribute="trailing" constant="15" id="cnF-nc-b9R"/>
+                            <constraint firstItem="a7x-gk-7OO" firstAttribute="centerY" secondItem="cwM-fI-kqQ" secondAttribute="centerY" id="ixY-1d-XdL"/>
+                            <constraint firstItem="mw8-fr-oLU" firstAttribute="top" secondItem="a7x-gk-7OO" secondAttribute="bottom" constant="30" id="jUh-pS-FiW"/>
+                            <constraint firstItem="cwM-fI-kqQ" firstAttribute="trailing" secondItem="mw8-fr-oLU" secondAttribute="trailing" id="lZZ-Oq-GQG"/>
+                            <constraint firstItem="cwM-fI-kqQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="sP1-Bf-w2k"/>
+                            <constraint firstItem="sTx-vg-MYe" firstAttribute="leading" secondItem="cwM-fI-kqQ" secondAttribute="leadingMargin" constant="6" id="sq4-G5-wKW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AnalyzeButton" destination="mw8-fr-oLU" id="name-outlet-mw8-fr-oLU"/>
+                        <outlet property="VoiceImageView" destination="a7x-gk-7OO" id="name-outlet-a7x-gk-7OO"/>
+                        <outlet property="VoiceTextField" destination="cwM-fI-kqQ" id="name-outlet-cwM-fI-kqQ"/>
+                        <outlet property="AnalyzedLabel" destination="sTx-vg-MYe" id="name-outlet-sTx-vg-MYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.8" y="30.29557"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Voice" width="32" height="32"/>
+    </resources>
+</document>

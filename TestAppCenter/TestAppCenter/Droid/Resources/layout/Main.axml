@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ClickMeTextField"        
+        android:layout_alignParentTop="true"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ClickMeButton"
+        android:text="Click Me!"
+        android:textAllCaps="false"
+        android:layout_below="@id/ClickMeTextField"/>
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ViewMeButton"
+        android:text="View Me!"
+        android:textAllCaps="false"
+        android:layout_below="@id/ClickMeButton"/>
+  
+</RelativeLayout>
