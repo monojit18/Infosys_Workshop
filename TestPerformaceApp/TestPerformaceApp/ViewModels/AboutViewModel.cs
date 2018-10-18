@@ -14,39 +14,28 @@ namespace TestPerformaceApp.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
-
-        private HttpClient _httpClient;
+    
         private SemaphoreSlim _poolSemaphore;
 
         private async Task UploadPostsAsync(Item uploadItem)
         {
 
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+            using (var httpClient = new HttpClient())
+            {
 
-            var uploadString = JsonConvert.SerializeObject(uploadItem);
-            var content = new StringContent(uploadString, Encoding.UTF8, "application/json");
+                httpClient.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
 
-            var httpResponse = await _httpClient.PostAsync("posts", content);
-            var responseString = await httpResponse.Content.ReadAsStringAsync();
+                var uploadString = JsonConvert.SerializeObject(uploadItem);
+                var content = new StringContent(uploadString, Encoding.UTF8, "application/json");
 
-
-            //var buffer = new byte[responseStream.Length];
-            //int offset = 0;
-            //int bytesRead = 0;
-
-            //do
-            //{
-
-            //    bytesRead = await responseStream.ReadAsync(buffer, offset, buffer.Length);
-            //    offset += bytesRead;
-
-            //} while (bytesRead <= 0);
-
-            _poolSemaphore.Release();
-            Console.WriteLine(responseString);
+                var httpResponse = await httpClient.PostAsync("posts", content);
+                var responseString = await httpResponse.Content.ReadAsStringAsync();
 
 
+                _poolSemaphore.Release();
+                Console.WriteLine(responseString);
+
+            }
         }
 
         private async Task PoolUploadPostsAsync()

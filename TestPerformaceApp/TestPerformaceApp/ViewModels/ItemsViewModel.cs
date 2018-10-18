@@ -16,20 +16,22 @@ namespace TestPerformaceApp.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-
-        private HttpClient _httpClient;
+    
         private SemaphoreSlim _poolSemaphore;
 
         private async Task DownloadImageAsync(string segmentString)
         {
 
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://placeholder.com/");
-            var httpResponse = await _httpClient.GetAsync(segmentString);
-            var imageBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-            _poolSemaphore.Release();
-            Console.WriteLine($"{segmentString}: " + imageBytes.Length.ToString());
+            using (var httpClient = new HttpClient())
+            {
 
+                httpClient.BaseAddress = new Uri("https://placeholder.com/");
+                var httpResponse = await httpClient.GetAsync(segmentString);
+                var imageBytes = await httpResponse.Content.ReadAsByteArrayAsync();
+                _poolSemaphore.Release();
+                Console.WriteLine($"{segmentString}: " + imageBytes.Length.ToString());
+
+            }
 
         }
 
@@ -67,7 +69,7 @@ namespace TestPerformaceApp.ViewModels
                     await _poolSemaphore.WaitAsync();
                     await DownloadImageAsync(val);
 
-                }).ToArray();
+                }).ToArray(); ;
 
                 await Task.WhenAll(tasksArray);
 
